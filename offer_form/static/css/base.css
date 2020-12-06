@@ -328,3 +328,11 @@ form div.field {
     color:#666;
     border-radius:4px;
 }
+footer { height:50px;background:#000;color:gray;text-align:center; position: fixed; bottom: 0; }
+footer p, a { padding-top:15px; }
+
+* { padding:0;margin:0; }
+
+html, body { height:100%; }
+
+#wrapper { width:1000px;margin:0 auto;min-height:calc(100% - 50px); }
