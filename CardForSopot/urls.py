@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('account/', include('account.urls')),
-    path('offer_form/', include('offer_form.urls', namespace='offers'))
+    path('', include('account.urls')),
+    path('offer_form/', include('offer_form.urls', namespace='offers')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
