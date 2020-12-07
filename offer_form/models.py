@@ -5,7 +5,7 @@ from django.urls import reverse
 class Category(models.Model):
     name = models.CharField(max_length=200,
                             db_index=True)
-    slug = models.SlugField(max_length=200, db_index=True,
+    slug = models.SlugField(max_length=200,
                             unique=True)
 
     class Meta:
@@ -22,7 +22,7 @@ class Category(models.Model):
 
 class Offers(models.Model):
     category = models.ForeignKey(Category,
-                                 related_name='products',
+                                 related_name='offers',
                                  on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True, default=None)
@@ -30,6 +30,7 @@ class Offers(models.Model):
     image = models.ImageField(upload_to='products/%Y/%m/%d',
                               blank=True)
     bonus = models.FloatField(max_length=3, db_index=True)
+    available = models.BooleanField(default=True)
     description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
 

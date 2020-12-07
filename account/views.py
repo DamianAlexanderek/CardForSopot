@@ -28,6 +28,3 @@ def user_login(request):
     return render(request, 'account/login.html', {'form': form})
 
 
-
-def partners(request):
-    return render(request, "account/partners.html", {'section': 'partners'})

@@ -8,23 +8,13 @@
 {% block content %}
   <div id="sidebar">
     <h3>Kategorie</h3>
-{#    <nav>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Gastronomia</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Edukacja</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Kultura i sztuka</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Zdrowie i uroda</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Sport</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Zakupy</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Usługi</a>#}
-{#        <a href="#" class =""><svg width="28" height="28" VIEWBOX="0 0 28 28" fill="None"></svg>Obiekty noclegowe</a>#}
-{#    </nav>#}
-    <ul>
+      <ul>
         <li {% if not category %}class="selected"{% endif %}>
             <a href="{% url "offer_form:offer_list" %}">Wszystkie</a>
         </li>
-        {% for c in categories %}
-            <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                <a href="{ c.get_absolute_url }">{{ c.name }}</a>
+        {% for cat in categories %}
+            <li {% if category.slug == cat.slug %}class="selected"{% endif %}>
+                <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
             </li>
         {% endfor %}
     </ul>

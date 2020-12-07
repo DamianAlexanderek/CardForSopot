@@ -11,10 +11,10 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Offers)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'adres',
-                    'image', 'bonus', 'description', 'created']
-    list_filter = ['name', 'bonus']
-    list_editable = ['bonus']
-    prepopulated_fields = {'slug': ('name',)}
+                    'image', 'bonus', 'available', 'description', 'created']
+    list_filter = ['name', 'bonus', 'available']
+    list_editable = ['bonus', 'available']
+    prepopulated_fields = {'slug': ('name', )}
 
 
 

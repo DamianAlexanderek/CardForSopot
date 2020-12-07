@@ -7,20 +7,20 @@
 </head>
 <body>
     <div id="header">
-        <span class="logo">CardForSopot</span>
+        <a href="{% url "dashboard" %}" class="logo">CardForSopot</a>
         {% if request.user.is_authenticated %}
             <ul class="menu">
                 <li {% if section == "dashboard" %}class="selected"{% endif %}>
                     <a href="{% url "dashboard" %}">Panel główny</a>
                 </li>
-                <li {% if section == "offers" %}class="selected"{% endif %}>
+                <li {% if section == "image" %}class="selected"{% endif %}>
                     <a href="{% url "offer_form:offer_list" %}">Oferta</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="#">Kalendarz wydarzeń</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="{ % url "partnets" %}">O karcie</a>
+                    <a href="#">O karcie</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="#">UM Sopot</a>
