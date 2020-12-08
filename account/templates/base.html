@@ -17,13 +17,7 @@
                     <a href="{% url "offer_form:offer_list" %}">Oferta</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="#">Kalendarz wydarzeń</a>
-                </li>
-                <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="#">O karcie</a>
-                </li>
-                <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="#">UM Sopot</a>
+                    <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="#">Asystent mieszkańca</a>
