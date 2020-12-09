@@ -10,7 +10,7 @@ def offer_list(request, category_slug=None):
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
     return render(request,
-                  'offer_form/product/list.html',
+                  'offer/product/list.html',
                   {'category': category,
                    'categories': categories,
                    'products': products})
@@ -18,5 +18,5 @@ def offer_list(request, category_slug=None):
 
 def offer_detail(request, id, slug):
     product = get_object_or_404(Offers, id=id, slug=slug, available=True)
-    return render(request, 'offer_form/product/detail.html',
+    return render(request, 'offer/product/detail.html',
                   {'product': product})

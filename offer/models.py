@@ -17,7 +17,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('offer_form:offer_list_by_category', args=[self.slug])
+        return reverse('offer:offer_list_by_category', args=[self.slug])
 
 
 class Offers(models.Model):
@@ -42,4 +42,4 @@ class Offers(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('offer_form:offer_detail', args=[self.id, self.slug])
+        return reverse('offer:offer_detail', args=[self.id, self.slug])

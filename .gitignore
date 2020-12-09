@@ -7,3 +7,5 @@ env.bak/
 venv.bak/
 __pycache__/
 .idea/
+=8.0
+db.sqlite3

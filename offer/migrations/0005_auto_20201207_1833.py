@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('offer_form', '0004_offers_available'),
+        ('offer', '0004_offers_available'),
     ]
 
     operations = [
@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='offers',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='offers', to='offer_form.category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='offers', to='offer.category'),
         ),
     ]
