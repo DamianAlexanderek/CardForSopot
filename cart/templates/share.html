@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}CardForSopot{% endblock %}</title>
+  <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url "dashboard" %}" class="logo">CardForSopot</a>
+        {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li {% if section == "dashboard" %}class="selected"{% endif %}>
+                    <a href="{% url "dashboard" %}">Panel główny</a>
+                </li>
+                <li {% if section == "image" %}class="selected"{% endif %}>
+                    <a href="{% url "offer:offer_list" %}">Oferta</a>
+                </li>
+                <li {% if section == "people" %}class="selected"{% endif %}>
+                    <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>
+                </li>
+                <li {% if section == "people" %}class="selected"{% endif %}>
+                    <a href="#">Asystent mieszkańca</a>
+                </li>
+            </ul>
+        {% endif %}
+        <span class="user">
+            {% if request.user.is_authenticated %}
+                Witaj, {{ request.user.first_name }}
+                <a href="{% url "logout" %}">Wyloguj</a>
+            {% else %}
+                <a href="{% url "login" %}">Zaloguj</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+{% block content %}
+  <h1>Jak zostać partnerem</h1>
+    <p>Z Kartą Mieszkańca współpracuje już bardzo wiele firm, ale chcemy, by było ich jeszcze więcej!
+      Chcesz podjąć współpracę w projekcie? Sprawdź, jak to zrobić:</p>
+    <p>1. Zależy nam na atrakcyjnym rabacie, który będzie rzeczywiście odczuwalny dla użytkowników Karty Mieszkańca, czyli przynajmniej 15% na minimum jedną usługę. Rabat może dotyczyć całej lub części oferty, może być również uwarunkowany sezonowo, mogą Państwo już w trakcie trwania współpracy wprowadzać dodatkowe promocje.</p>
+    <p>2. Karta Mieszkańca nie działa na okaziciela! W celu kontroli kart konieczne jest korzystanie z aplikacji na telefonach z systemem android lub w przeglądarce (komputer z dostępem do Internetu). Decyzję dotyczącą przedłużenia współpracy podejmujemy w oparciu o statystyki użycia karty w obiekcie partnera.</p>
+    <p>3. Prezentacja partnera: potrzebujemy informacji o ofercie firmy i kilku zdjęć, które posłużą do celów promocyjnych. Opis powinien zawierać maksymalnie 600 znaków ze spacjami, a zdjęcia minimum 1600x1200 pikseli.</p>
+    <p>4. Oferta działań promocyjnych na rzecz partnera jest uzależniona od wysokości oferowanego rabatu.</p>
+    <p>5. Zależy nam na jakości. Podejmując decyzję o dołączeniu partnera do Karty kierujemy się opiniami mieszkańców Sopotu. Analizujemy opinie na temat oferowanych usług oraz potrzeby mieszkańców wynikające z prowadzonych przez nas badań. Gwarantujemy sobie prawo do odmowy nawiązania współpracy, jeżeli oferta wykracza poza przyjęty przez nas kierunek rozwoju.</p>
+    <p>6. Napisz do nas:</p>
+
+
+  {% if sent %}
+    <h1>E-mail successfully sent</h1>
+    <p>
+      "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
+    </p>
+  {% else %}
+    <form action="." method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" value="Send e-mail">
+    </form>
+  {% endif %}
+{% endblock %}
