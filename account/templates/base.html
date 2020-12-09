@@ -7,17 +7,35 @@
 </head>
 <body>
     <div id="header">
+<<<<<<< HEAD
         <a href="{% url "dashboard" %}" class="logo">CardForSopot</a>
+=======
+        <span class="logo">CardForSopot</span>
+>>>>>>> 90676be8fbcdc6ef98118a5f877f7437ae6d7610
         {% if request.user.is_authenticated %}
             <ul class="menu">
                 <li {% if section == "dashboard" %}class="selected"{% endif %}>
                     <a href="{% url "dashboard" %}">Panel główny</a>
                 </li>
+<<<<<<< HEAD
                 <li {% if section == "image" %}class="selected"{% endif %}>
                     <a href="{% url "offer:offer_list" %}">Oferta</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>
+=======
+                <li {% if section == "offers" %}class="selected"{% endif %}>
+                    <a href="{% url "offer_form:offer_list" %}">Oferta</a>
+                </li>
+                <li {% if section == "people" %}class="selected"{% endif %}>
+                    <a href="#">Kalendarz wydarzeń</a>
+                </li>
+                <li {% if section == "people" %}class="selected"{% endif %}>
+                    <a href="{ % url "partnets" %}">O karcie</a>
+                </li>
+                <li {% if section == "people" %}class="selected"{% endif %}>
+                    <a href="#">UM Sopot</a>
+>>>>>>> 90676be8fbcdc6ef98118a5f877f7437ae6d7610
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="#">Asystent mieszkańca</a>
