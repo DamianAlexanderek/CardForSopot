@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('offer_form', '0008_auto_20201208_1949'),
+        ('offer', '0008_auto_20201208_1949'),
     ]
 
     operations = [
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 ('available', models.BooleanField(default=True)),
                 ('description', models.TextField(blank=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='offers', to='offer_form.category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='offers', to='offer.category')),
             ],
             options={
                 'ordering': ('name',),

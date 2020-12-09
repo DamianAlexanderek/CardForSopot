@@ -14,7 +14,7 @@
                     <a href="{% url "dashboard" %}">Panel główny</a>
                 </li>
                 <li {% if section == "image" %}class="selected"{% endif %}>
-                    <a href="{% url "offer_form:offer_list" %}">Oferta</a>
+                    <a href="{% url "offer:offer_list" %}">Oferta</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>

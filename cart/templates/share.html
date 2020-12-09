@@ -1,5 +1,11 @@
 {% load static %}
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}CardForSopot{% endblock %}</title>
+  <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
 <body>
     <div id="header">
         <a href="{% url "dashboard" %}" class="logo">CardForSopot</a>
@@ -9,7 +15,7 @@
                     <a href="{% url "dashboard" %}">Panel główny</a>
                 </li>
                 <li {% if section == "image" %}class="selected"{% endif %}>
-                    <a href="{% url "offer_form:offer_list" %}">Oferta</a>
+                    <a href="{% url "offer:offer_list" %}">Oferta</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
                     <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>
@@ -29,7 +35,7 @@
         </span>
     </div>
 </body>
-{% block title %}
+{% block content %}
   <h1>Jak zostać partnerem</h1>
     <p>Z Kartą Mieszkańca współpracuje już bardzo wiele firm, ale chcemy, by było ich jeszcze więcej!
       Chcesz podjąć współpracę w projekcie? Sprawdź, jak to zrobić:</p>
@@ -38,9 +44,9 @@
     <p>3. Prezentacja partnera: potrzebujemy informacji o ofercie firmy i kilku zdjęć, które posłużą do celów promocyjnych. Opis powinien zawierać maksymalnie 600 znaków ze spacjami, a zdjęcia minimum 1600x1200 pikseli.</p>
     <p>4. Oferta działań promocyjnych na rzecz partnera jest uzależniona od wysokości oferowanego rabatu.</p>
     <p>5. Zależy nam na jakości. Podejmując decyzję o dołączeniu partnera do Karty kierujemy się opiniami mieszkańców Sopotu. Analizujemy opinie na temat oferowanych usług oraz potrzeby mieszkańców wynikające z prowadzonych przez nas badań. Gwarantujemy sobie prawo do odmowy nawiązania współpracy, jeżeli oferta wykracza poza przyjęty przez nas kierunek rozwoju.</p>
-    <p>6. Napisz do nas:</p>{% endblock %}
+    <p>6. Napisz do nas:</p>
 
-{% block content %}
+
   {% if sent %}
     <h1>E-mail successfully sent</h1>
     <p>
