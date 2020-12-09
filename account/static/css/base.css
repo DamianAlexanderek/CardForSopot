@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Muli);
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 
 body {
     margin:0;
@@ -21,7 +22,7 @@ a:hover {
     color:#00a74f;
 }
 
-h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
+h1, h2, h3, h4, h5 , h6 { font-family: 'Nerko One', cursive, sans-serif; font-weight:normal; }
 
 h1 {
     border-bottom:1px solid #bbb;
