@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('account.urls')),
     path('offer/', include('offer.urls', namespace='offer')),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('images/', include('images.urls', namespace='images')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

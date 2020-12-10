@@ -20,7 +20,7 @@
                     <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="#">Asystent mieszkańca</a>
+                    <a href="{% url "images:create" %}">Asystent mieszkańca</a>
                 </li>
             </ul>
         {% endif %}
