@@ -5,19 +5,10 @@ from .models import Image
 
 
 class ImageCreateForm(forms.ModelForm):
-
     class Meta:
         model = Image
         fields = ('title', 'image', 'description')
 
-    def clean_url(self):
-        image = self.cleaned_data['image']
-        valid_extensions = ['jpg', 'jpeg']
-        extension = image.rsplit('.', 1)[1].lower()
-        if extension not in valid_extensions:
-            raise forms.ValidationError('Podane zdjęcie nie jest w ' \
-                                        'obsługiwanym formacie.')
-        return 'Dodaj zdjecie w formacie jpg lub jpeg.'
 
     def save(self, force_insert=False, force_update=False, commit=True):
         image = super(ImageCreateForm, self).save(commit=False)
