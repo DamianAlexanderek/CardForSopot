@@ -3,34 +3,38 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>{% block title %}CardForSopot{% endblock %}</title>
+  <title>{% block title %}KARTA SOPOCKA{% endblock %}</title>
   <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
+<div class="topbar">
+    <p><p/>
+</div>
     <div id="header">
-        <a href="{% url "dashboard" %}" class="logo">CardForSopot</a>
+        <a href="{% url "dashboard" %}" class="logo"> #KARTA SOPOCKA</a>
         {% if request.user.is_authenticated %}
             <ul class="menu">
                 <li {% if section == "dashboard" %}class="selected"{% endif %}>
-                    <a href="{% url "dashboard" %}">Panel główny</a>
+                    <a href="{% url "dashboard" %}">HOME</a>
                 </li>
+                <li></li>
                 <li {% if section == "image" %}class="selected"{% endif %}>
-                    <a href="{% url "offer:offer_list" %}">Oferta</a>
+                    <a href="{% url "offer:offer_list" %}">OFERTA</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="{% url "cart:cart" %}">Jak zostać Partnerem</a>
+                    <a href="{% url "cart:cart" %}">Jak zostać partnerem akcji</a>
                 </li>
                 <li {% if section == "people" %}class="selected"{% endif %}>
-                    <a href="#">Asystent mieszkańca</a>
+                    <a href="{% url "images:create" %}">ASYSTENT MIESZKAŃCA</a>
                 </li>
             </ul>
         {% endif %}
         <span class="user">
             {% if request.user.is_authenticated %}
                 Witaj, {{ request.user.first_name }}
-                <a href="{% url "logout" %}">Wyloguj</a>
+                <a href="{% url "logout" %}">wyloguj</a>
             {% else %}
-                <a href="{% url "login" %}">Zaloguj</a>
+                <a href="{% url "login" %}">zaloguj</a>
             {% endif %}
         </span>
     </div>
