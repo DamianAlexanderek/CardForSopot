@@ -105,11 +105,11 @@ ol {
     position: relative; /* obrazek będzie się zmieniał rozmiar wraz ze stroną */
     text-align: center; /* wyśrodkowanie tekstu na obrazku */
     color: black; /* kolor tekstu */
-    font-size:16px;
+    font-size:20px;
     float: left;
     width: 100%;
     height: auto;
-
+    display: block;
 }
 
 .srodek {  /*tekst zawsze będzie na środku*/
@@ -123,14 +123,13 @@ ol {
     position: absolute;
     top: 70%; /* położenie względem gallery, ale też wynikające z ilości tekstu. nad tym należy mieć kontrolę. przycisk będzie na środku, ale tylko w pionie. w poziomie będzie schodził poniżej tekstu */
     left: 50%;
+    align-content: center;
+    align-items: center;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 
   /* tutaj oczywiście możesz dodać inne dodatkowe style dla przycisku */
 }
-
-
-
 
 .footer {
   background-color: #F1F1F1;
