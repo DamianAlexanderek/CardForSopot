@@ -1,9 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Muli);
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap);
 
 body {
     margin:0;
     padding:0;
-    font-family:helvetica, sans-serif;
+    font-family:Oswald, sans-serif;
 }
 html, body {
     height:100%;
@@ -11,20 +12,20 @@ html, body {
 p {
     line-height: 1.8;
 }
-
+/* tu jest menu pionowe w offertach zmienic w przyciski na foto*/
 a {
-    color:#12c064;
+    color:#A9A9A9;
     text-decoration:none;
 }
 
 a:hover {
-    color:#00a74f;
+    color:#808080;
 }
 
-h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
+h1, h2, h3, h4, h5 , h6 { font-family: 'Oswald', sans-serif; font-weight:normal; }
 
 h1 {
-    border-bottom:1px solid #bbb;
+    border-bottom:1px solid #2979ff;
     padding:0 0 10px 0;
     margin:10px 0 20px 0;
 }
@@ -38,54 +39,103 @@ ol {
 }
 
 #header {
-    padding:10px 100px;
-    font-size:14px;
-    background:#12c064;
-    color:#fff;
-    border-bottom:4px solid #1cdf78;
+    padding:40px 100px;
+    font-size:18px;
+    background:#DCDCDC; /* tu jest pasek głowny na ktorym jest menu */
+    color:#9f8d6b; /* napis witaj */
+    border-bottom:4px solid #DCDCDC; /* tu jest linia pod paskiem głownym z menu */
     overflow:auto;
 }
 
 #header .logo {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Cabin Sketch', cursive;
     float:left;
-    color:#f3f7cc;
-    font-size:20px;
+    color:#000000; /* kolor logo*/
+    font-size:30px;
     margin-right:10%;
 }
 
 #header ul.menu {
-    list-style:none;
+    list-style:none;  /* wszystko to co w menu poza witaj i loguj */
     float:left;
     margin:0;
     padding:0;
 }
 #header ul.menu li {
-    float:left;
+    float:left;  /* wszystko to co w menu poza witaj i loguj */
     padding:4px 10px;
 }
-
 #header ul.menu li.selected a, #header ul.menu li.selected a:hover {
-    color:#1b6d32;
-    font-weight:bold;
+    color:#808080;
 }
-
 #header a {
-    color:#f3f7cc;
+    color:#616161;
 }
 #header a:hover {
     color:#fff;
 }
-
 #header .user {
     float:right;
     padding-top:4px;
 }
-
 #content {
     padding:30px 100px;
 }
+/*#button1 {
+    text-align: center;    /*nie wiem do czego to
+}
 
+
+
+
+/* banner z foka */
+#one {
+    text-align:center
+}
+
+/* tekst pod bannerem z foka */
+#two {
+    color: #000000;
+    text-align:center;
+    border: 1px solid gray;
+
+}
+/* buttony na obrazkach pod bannerem */
+.gallery {
+    position: relative; /* obrazek będzie się zmieniał rozmiar wraz ze stroną */
+    text-align: center; /* wyśrodkowanie tekstu na obrazku */
+    color: black; /* kolor tekstu */
+    font-size:20px;
+    float: left;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.srodek {  /*tekst zawsze będzie na środku*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);git
+}
+
+.guzik {
+    position: absolute;
+    top: 70%; /* położenie względem gallery, ale też wynikające z ilości tekstu. nad tym należy mieć kontrolę. przycisk będzie na środku, ale tylko w pionie. w poziomie będzie schodził poniżej tekstu */
+    left: 50%;
+    align-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+  /* tutaj oczywiście możesz dodać inne dodatkowe style dla przycisku */
+}
+
+.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+}
 /* forms */
 form {
     overflow:auto;
@@ -194,7 +244,7 @@ ul.messages li a.close {
 .social li.google { background:#de1710; }
 
 
-/* images */
+/* banner */
 
 .image-preview, .image-detail {
     max-width:300px;
